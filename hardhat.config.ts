@@ -26,9 +26,15 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: "0.8.4",
+        version: "0.8.14",
       },
     ],
+    settings: {
+      optimizer: {
+        runs: 200,
+        enabled: true,
+      },
+    },
   },
   networks: {
     local: {
@@ -39,26 +45,18 @@ const config: HardhatUserConfig = {
     },
     ropsten: {
       url: process.env.ROPSTEN_URL || "",
-      accounts: [
-        process.env.PRIVATE_KEY_DEPLOYER || "",
-        process.env.PRIVATE_KEY_TESTER || "",
-      ],
       gas: 2100000,
       gasPrice: 8000000000,
     },
     rinkeby: {
       url: process.env.RINKEBY_URL || "",
-      accounts: [
-        process.env.PRIVATE_KEY_DEPLOYER || "",
-        process.env.PRIVATE_KEY_TESTER || "",
-      ],
       gas: 2100000,
       gasPrice: 8000000000,
       chainId: 4,
     },
   },
   gasReporter: {
-    enabled: process.env.REPORT_GAS !== undefined,
+    enabled: true,
     currency: "USD",
   },
   etherscan: {
