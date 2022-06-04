@@ -1,0 +1,115 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.14;
+
+contract Add {
+    fallback() external { }
+
+    // gas: 22321
+    function test(uint8 a, uint8 b) public pure returns (uint8) {
+        return a + b;
+    }
+}
+
+/***
+ * Remix  test --------
+ * 088 JUMP
+ * 089 JUMPDEST
+ * 090 PUSH1 40
+ * 092 MLOAD
+ * 093 DUP1
+ * 094 SWAP2
+ * 095 SUB
+ * 096 SWAP1
+ * 097 RETURN
+ * 098 JUMPDEST
+ * 099 PUSH1 00
+ * 101 DUP2
+ * 102 DUP4
+ * 103 PUSH2 0070
+ * 106 SWAP2
+ * 107 SWAP1
+ * 108 PUSH2 014f
+ * 111 JUMP
+ * 112 JUMPDEST
+ * 113 SWAP1
+ * 114 POP
+ * 115 SWAP3
+ * 116 SWAP2
+ * 117 POP
+ * 118 POP
+ * 119 JUMP
+ * 120 JUMPDEST
+ * 121 PUSH1 00
+ * 123 DUP1
+ * 124 REVERT
+ * 125 JUMPDEST
+ * 126 PUSH1 00
+ * 128 PUSH1 ff
+ * 130 DUP3
+ * 131 AND
+ * 132 SWAP1
+ * 133 POP
+ * 134 SWAP2
+ * 135 SWAP1
+ * 136 POP
+ * 137 JUMP
+ * 138 JUMPDEST
+ * 139 PUSH2 0093
+ * 142 DUP2
+ * 143 PUSH2 007d
+ * 146 JUMP
+ * 147 JUMPDEST
+ * 148 DUP2
+ * 149 EQ
+ * 150 PUSH2 009e
+ * 153 JUMPI
+ * 154 PUSH1 00
+ * 156 DUP1
+ * 157 REVERT
+ * 158 JUMPDEST
+ * 159 POP
+ * 160 JUMP
+ * 161 JUMPDEST
+ * 162 PUSH1 00
+ * 164 DUP2
+ * 165 CALLDATALOAD
+ * 166 SWAP1
+ * 167 POP
+ * 168 PUSH2 00b0
+ * 171 DUP2
+ * 172 PUSH2 008a
+ * 175 JUMP
+ * 176 JUMPDEST
+ * 177 SWAP3
+ * 178 SWAP2
+ * 179 POP
+ * 180 POP
+ * 181 JUMP
+ * 182 JUMPDEST
+ * 183 PUSH1 00
+ * 185 DUP1
+ * 186 PUSH1 40
+ * 188 DUP4
+ * 189 DUP6
+ * 190 SUB
+ * 191 SLT
+ * 192 ISZERO
+ * 193 PUSH2 00cd
+ * 196 JUMPI
+ * 197 PUSH2 00cc
+ * 200 PUSH2 0078
+ * 203 JUMP
+ * 204 JUMPDEST
+ * 205 JUMPDEST
+ * 206 PUSH1 00
+ * 208 PUSH2 00db
+ * 211 DUP6
+ * 212 DUP3
+ * 213 DUP7
+ * 214 ADD
+ * 215 PUSH2 00a1
+ * 218 JUMP
+ * 219 JUMPDEST
+ * 220 SWAP3
+ * 221 POP
+*/
